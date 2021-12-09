@@ -24,5 +24,5 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:3000
       - name: build
-        run: npm run build:front  
+        run: npm run build:front
       
