@@ -9,6 +9,7 @@ const loadUser = () =>
 const logoutUser = () =>
   localStorage.removeItem(storageKey)
 
+// eslint-disable-next-line 
 export default {
   saveUser,
   loadUser,

@@ -25,6 +25,7 @@ mongoose.set('useFindAndModify', false)
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('build'))
 app.use(middleware.tokenExtractor)
 
 app.use('/api/blogs', blogsRouter)
@@ -33,5 +34,10 @@ app.use('/api/login', loginRouter)
 app.use('/api/testing', testRouter)
 
 app.use(middleware.errorHandler)
+
+// heroku health check
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 
 module.exports = app
