@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
-const uniqueValidator = require('mongoose-unique-validator')
+//const uniqueValidator = require('mongoose-unique-validator')
 
 const userSchema = mongoose.Schema({
   username: {
     type: String,
     minlength: 3,
-    unique: true
+    //unique: true
   },
   name: String,
   passwordHash: String,
@@ -26,7 +26,7 @@ userSchema.set('toJSON', {
   }
 })
 
-userSchema.plugin(uniqueValidator)
+//userSchema.plugin(uniqueValidator)
 
 const User = mongoose.model('User', userSchema)
 
