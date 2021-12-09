@@ -15,8 +15,6 @@ jobs:
           node-version: '14'
       - name: npm install
         run: npm install
-      - name: build
-        run: npm run build:front  
       - name: test
         run: npm run test
       - name: e2e tests
@@ -25,4 +23,6 @@ jobs:
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:3000
+      - name: build
+        run: npm run build:front  
       
