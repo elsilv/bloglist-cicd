@@ -18,6 +18,9 @@ jobs:
       - name: npm install
         working-directory: ./bloglist-frontend
         run: npm install
+      - name: eslint
+        working-directory: ./bloglist-frontend
+        run: npm run lint
       - name: build
         run: npm run build:front  
       - name: test
