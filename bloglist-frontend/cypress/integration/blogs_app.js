@@ -27,7 +27,7 @@ describe('Blog app', function() {
         cy.contains('Matti Luukkainen logged in')
       })
   
-      it.skip('fails with wrong credentials', function() {
+      it('fails with wrong credentials', function() {
         cy.get('#username').type('mluukkai')
         cy.get('#password').type('wrong')
         cy.get('#login').click()
@@ -41,7 +41,7 @@ describe('Blog app', function() {
         cy.login({ username: 'mluukkai', password: 'salainen' })
       })
   
-      it.skip('A blog can be created', function() {
+      it('A blog can be created', function() {
         cy.contains('create new blog').click()
         cy.get('#author').type('Gleb Bahmutov')
         cy.get('#title').type('Readable Cypress.io tests')
@@ -67,7 +67,7 @@ describe('Blog app', function() {
         cy.contains('test3').parent().parent().as('blog3')
       })
   
-      it.skip('Blogs can be liked', function() {
+      it('Blogs can be liked', function() {
         cy.get('@blog2').contains('view').click()
         cy.get('@blog2').contains('like').click()
         cy.get('@blog2').contains('likes 1')
